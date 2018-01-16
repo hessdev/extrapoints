@@ -1,0 +1,38 @@
+<nav id="main-nav" class="navbar navbar-expand-lg navbar-dark fixed-top">
+  <a class="navbar-brand" href="/">Extra Points</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav-collapse" (click)="isCollapsed = !isCollapsed"
+  [attr.aria-expanded]="!isCollapsed" aria-controls="#main-nav-collapse" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="main-nav-collapse" [ngbCollapse]="isCollapsed">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Lineup</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link">
+          Rosters
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link">
+          Scores
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Head To Head</a>
+      </li>
+      <li class="nav-item" ngbDropdown>
+        <a class="nav-link dropdown-toggle" id="teams-dropdown" ngbDropdownToggle>
+          Teams
+        </a>
+        <div class="dropdown-menu" aria-labelledby="rosters-dropdown" ngbDropdownMenu>
+          <a class="dropdown-item" href="#">Abusement Park</a>
+          <a class="dropdown-item" href="#">Drive-By Snowman</a>
+          <a class="dropdown-item" href="#">Black Hole</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>

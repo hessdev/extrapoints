@@ -1,0 +1,14 @@
+#main-nav.navbar {
+	background-color: $body-bg;
+	border-bottom: 1px solid $gray-800;
+	.navbar-brand {
+		font-weight: 700;
+		color: $blue;
+	}
+	.nav-item {
+		font-size: .875rem;
+	}
+	.dropdown-menu {
+		font-size: .875rem;
+	}
+}
