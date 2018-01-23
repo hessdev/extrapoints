@@ -1,0 +1,13 @@
+<div class="card">
+	<div class="card-body">
+		<h5 class="card-title">Total Points</h5>
+		<table class="table table-condensed table-striped table-bordered" *ngIf='teams && teams.length'>
+			<tbody>
+				<tr *ngFor="let team of teams | async">
+					<td>{{team.name}}</td>
+					<td class="text-right">{{team.totalPoints}}</td>
+				</tr>
+			</tbody>
+		</table>
+	</div><!-- /.card-body -->
+</div><!-- /.card -->
