@@ -16,7 +16,7 @@ export class InfoResolver implements Resolve<IInfo> {
 
 	resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<IInfo> {
 		let year = route.params['year'];
-		let now = new Date();
+		const now = new Date();
 		if ( isNaN(year) || (year < 1996 || year > now.getFullYear()) ) {
 			year = (now.getMonth() >= 8) ? now.getFullYear() : now.getFullYear() - 1;
 		}

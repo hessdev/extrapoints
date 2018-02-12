@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { TeamService } from './team/team.service';
 import { InfoService } from './info/info.service';
 import { ActivatedRoute } from '@angular/router';
@@ -9,7 +9,7 @@ import { IInfo } from './info/info';
 	selector: 'app-root',
 	templateUrl: './app.component.html'
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
 
 	teams: ITeam[];
 	info: IInfo;
@@ -17,7 +17,7 @@ export class AppComponent {
 	constructor (private _teamService: TeamService, private _infoService: InfoService, private _route: ActivatedRoute) {}
 
 	ngOnInit(): void {
-		var self = this;
+		const self = this;
 		this._route.data.subscribe(
 			data => {
 				this.info = data['info'];

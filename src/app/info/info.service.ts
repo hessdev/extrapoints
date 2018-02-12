@@ -13,11 +13,11 @@ export class InfoService {
 	constructor(private _http: HttpClient) { }
 
 	getInfo(year: number): Observable<IInfo> {
-		let now = new Date();
+		const now = new Date();
 		if ( isNaN(year) || (year < 1996 || year > now.getFullYear()) ) {
 			year = (now.getMonth() >= 8) ? now.getFullYear() : now.getFullYear() - 1;
 		}
-		let url = `${this._infoUrl}/${year}`;
+		const url = `${this._infoUrl}/${year}`;
 		return this._http.get<IInfo>(url)
 			.do(data => console.log(data))
 			.catch(this.handleError);
