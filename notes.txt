@@ -1,2 +1,7 @@
 ng new extra-points
 
+Change base path
+ng build --base-href /MyApp/
+ng build --bh /MyApp/
+
+
