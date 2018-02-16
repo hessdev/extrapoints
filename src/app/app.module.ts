@@ -1,7 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
-import { RouterModule } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -22,8 +21,8 @@ import { PageNotFoundComponent } from './page-not-found.component';
 	imports: [
 		BrowserModule,
 		HttpClientModule,
-		RouterModule,
-		NgbModule.forRoot()
+		NgbModule.forRoot(),
+		AppRoutingModule
 	],
 	providers: [
 		InfoService,

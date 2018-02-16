@@ -14,21 +14,25 @@ export class AppComponent implements OnInit {
 	teams: ITeam[];
 	info: IInfo;
 	errorMessage: string;
-	constructor (private _teamService: TeamService, private _infoService: InfoService, private _route: ActivatedRoute) {}
+	constructor (private _teamService: TeamService, private _infoService: InfoService, private _route: ActivatedRoute) {
+		//console.log('year:' + this._route.snapshot.params['year']);
+	}
 
 	ngOnInit(): void {
 		const self = this;
-		this._route.data.subscribe(
+		self._route.data.subscribe(
 			data => {
-				this.info = data['info'];
-				self._teamService.getTeams(this.info.year, this.info.scoresWeek).subscribe(
+				self.info = data['info'];
+				console.log(self.info);
+				self._teamService.getTeams(self.info.year, self.info.scoresWeek).subscribe(
 					data => {
-						this.teams = data;
-						console.log(this.teams);
+						self.teams = data;
+						console.log(self.teams);
 					},
-					error => this.errorMessage = <any>error
+					error => self.errorMessage = <any>error
 				);
-			}
+			},
+			error => self.errorMessage = <any>error
 		);
 	}
 }

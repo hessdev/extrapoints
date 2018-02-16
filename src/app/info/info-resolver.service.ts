@@ -22,6 +22,7 @@ export class InfoResolver implements Resolve<IInfo> {
 		}
 		return this._infoService.getInfo(+year)
 			.map(info => {
+				console.log(info);
 				if (info) {
 					return info;
 				}
